@@ -8,6 +8,11 @@ class CookiesDialog:
     def open_settings(self):
         self.modify_button.click()
 
+    def wait_to_appear(self):
+        self.page.wait_for_selector("button:has-text('Dostosuj')", state="visible", timeout=10000)
+        if not self.modify_button.is_visible():
+            raise TimeoutError("Cookies dialog did not appear in time.")
+
 class CookiesSettings:
     def __init__(self, page: Page):
         self.page = page
