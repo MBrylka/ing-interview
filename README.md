@@ -3,12 +3,14 @@
 
 
 ```
-pytest --browser chromium --base-url https://www.ing.pl --video on --html report.html --self-contained-html;
+pytest --browser chromium --numprocesses auto --base-url https://www.ing.pl --video on --html report.html --self-contained-html;
 ```
 
 Parametry
 
 --browser = nazwa przegladarki do uruchominia testow
+
+--numprocesses auto = pozwala na wielowatkowe uruchamianie testow 
 
 --base-url = URL do testow, mozna wykorzystac do uruchamiania tych samych testow na roznych srodowiskach
 
